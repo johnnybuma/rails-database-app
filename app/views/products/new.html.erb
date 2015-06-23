@@ -1,0 +1,27 @@
+<% provide(:title, 'Add Products') %>
+<h1>Add New Product</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@product) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :size %>
+      <%= f.text_field :size %>
+
+      <%= f.label :color %>
+      <%= f.text_field :color %>
+
+      <%= f.label :weight %>
+      <%= f.text_field :weight %>
+    
+      <%= f.label :dimensions %>
+      <%= f.text_field :dimensions %>
+
+    <%= f.submit "Submit Product to Database", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

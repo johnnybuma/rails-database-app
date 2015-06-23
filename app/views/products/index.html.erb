@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <h3>Products</h3>
+    <div class="col-md-12">
+     <table class="table">
+       <% @products.each do |product| %>
+      <tr>
+        <td><%= product[:id] %></td>
+        <td><%= product.name %></td>
+        <td><%= product.size %></td>
+        <td><%= product.color %></td>
+        <td><%= product.weight %></td>
+        <td><%= product.dimensions %></td>
+        
+      </tr>
+      <%end%> 
+      </table>
+    </div>
+  </div>
+</div>
