@@ -11,7 +11,8 @@
         <td><%= product.color %></td>
         <td><%= product.weight %></td>
         <td><%= product.dimensions %></td>
-        
+        <td><%= link_to("Delete product", product_path(product), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs') %></td>
+
       </tr>
       <%end%> 
       </table>
