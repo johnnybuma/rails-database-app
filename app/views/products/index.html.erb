@@ -1,9 +1,22 @@
 <div class="container">
   <div class="row">
     <h3>Products</h3>
-    <div class="col-md-12">
+    <div class="col-md-12 table-responsive">
      <table class="table">
+
+       <tr>
+         <th>Id:</th>
+         <th>Name:</th>
+         <th>Size:</th>
+         <th>Color:</th>
+         <th>Weight:</th>
+         <th>Dimensions:</th>
+         <th>Delete:</th>
+         <th>Update:</th>
+       </tr>
+
        <% @products.each do |product| %>
+
       <tr>
         <td><%= product[:id] %></td>
         <td><%= product.name %></td>
@@ -11,7 +24,8 @@
         <td><%= product.color %></td>
         <td><%= product.weight %></td>
         <td><%= product.dimensions %></td>
-        <td><%= link_to("Delete product", product_path(product), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs') %></td>
+        <td><%= link_to("Delete", product_path(product), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs') %></td>
+        <td><%= link_to("Update", edit_product_path(product), :method=> :get, :class => 'button-xs') %></td>
 
       </tr>
       <%end%> 
