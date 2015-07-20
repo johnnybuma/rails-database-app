@@ -1,6 +1,23 @@
 <div class="container">
   <div class="row">
-    <h3>Products</h3>
+    <div class="col-md-3">
+      <h3>Products</h3>
+
+    </div>
+    <div class="col-md-6 search-div form-inline">
+    <%= form_tag(products_path, :method => "get", id: "search-form", class: "control-group") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Products", class: "form-control form-margin" %>
+        <%= submit_tag "Search", class: " btn btn-primary form-margin" %>
+    <% end %>
+
+    <% if @products.present? %>
+        <%= render @products %>
+    <% else %>
+        <p>There are no products containing the term(s) <%= params[:search] %>.</p>
+    <% end %>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-12 table-responsive">
      <table class="table">
 

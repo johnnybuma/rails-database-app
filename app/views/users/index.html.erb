@@ -1,7 +1,10 @@
 <div class="container">
   <div class="row">
     <h3>Users</h3>
-    <div class="column">
+    <div style="float: right; padding: 20px;">
+      <%= link_to("Add User", new_user_path, :method=> :get, :class => 'button-xs') %>
+    </div>
+    <div class="column table-responsive">
       <table class="table">
         <tbody>
           <% @users.each do |user| %>
