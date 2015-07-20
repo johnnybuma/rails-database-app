@@ -14,6 +14,11 @@
  *= require_self
  */
 
+tr {
+  color: #fff;
+}
+
+
 .form-margin {
   margin-top: 10px;
 }
@@ -30,7 +35,19 @@ table {
 /* Zebra striping */
 tr:nth-of-type(odd) {
   background: #eee;
+  color: black;
 }
+
+tr:nth-of-type(even) {
+  background: #455C6B;
+  a {
+    color: white;
+  }
+  select {
+    color: black;
+  }
+}
+
 th {
   background: #333;
   color: white;
@@ -50,3 +67,7 @@ td, th {
 .right {
   float: right;
 }
+
+
+
+
