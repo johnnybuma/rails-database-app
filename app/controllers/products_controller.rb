@@ -30,11 +30,11 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find_by(params[:name])
+    @product = Product.find(params[:id])
   end
 
   def update
-    @product = Product.find_by(params[:name])
+    @product = Product.find(params[:id])
     if @product.update_attributes(product_params)
       flash[:success] = "Product Updated!"
       redirect_to @product

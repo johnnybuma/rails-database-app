@@ -5,6 +5,7 @@ class Product < ActiveRecord::Base
 
   def self.search(search)
     where("name LIKE ?", "%#{search}%")
+    where("Dimensions LIKE ?", "%#{search}%")
   end
 
 end
