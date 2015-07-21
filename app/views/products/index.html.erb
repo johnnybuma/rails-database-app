@@ -6,8 +6,8 @@
     </div>
     <div class="col-md-6 search-div form-inline">
     <%= form_tag(products_path, :method => "get", id: "search-form", class: "control-group") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Products", class: "form-control form-margin" %>
-        <%= submit_tag "Search", class: " btn btn-primary form-margin" %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Products", class: "form-control form-margin" %>
+          <%= submit_tag "Search Products", class: " btn btn-primary form-margin" %>
     <% end %>
 
     <% if @products.present? %>
