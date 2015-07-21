@@ -18,7 +18,7 @@
     </div>
   </div>
   <div class="row form-margin">
-    <div class="col-md-12 table-responsive">
+    <div class="col-lg-12 table-responsive">
      <table class="table">
 
        <tr>
@@ -28,8 +28,11 @@
          <th>Color:</th>
          <th>Weight:</th>
          <th>Dimensions:</th>
-         <th>Delete:</th>
-         <th>Update:</th>
+         <th>Quantity:</th>
+         <th>Location:</th>
+         <th>Description:</th>
+
+         <th>Edit:</th>
        </tr>
 
        <% @products.each do |product| %>
@@ -41,8 +44,12 @@
         <td><%= product.color %></td>
         <td><%= product.weight %></td>
         <td><%= product.dimensions %></td>
-        <td><%= link_to("Delete", product_path(product), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs') %></td>
-        <td><%= link_to("Update", edit_product_path(product), :method=> :get, :class => 'button-xs') %></td>
+        <td><%= product.quantity %></td>
+        <td><%= product.location %></td>
+        <td><%= product.description %></td>
+
+        <td><%= link_to("Delete", product_path(product), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs') %><span style="margin-left: 5px; margin-right: 5px;"></span><%= link_to("Update", edit_product_path(product), :method=> :get, :class => 'button-xs') %></td>
+
 
       </tr>
       <%end%> 
