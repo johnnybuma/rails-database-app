@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
   validates_uniqueness_of :name, :message => "*  [%{value}] has already been recorded, please review database"
 
   def self.search(search)
-    where("Id LIKE ? OR Name LIKE ? OR Size LIKE ? OR Color LIKE ? OR Weight LIKE ? OR Dimensions LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    where("Id LIKE :search OR Name LIKE :search OR Size LIKE :search OR Color LIKE :search OR Weight LIKE :search OR Dimensions LIKE :search", search: "%#{search}%")
 
   end
 
