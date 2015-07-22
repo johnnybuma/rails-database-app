@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'fedex'
 gem 'fedex-web-services', :require => 'fedex'
+gem 'active_shipping'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

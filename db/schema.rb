@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150721070413) do
+ActiveRecord::Schema.define(version: 20150722202832) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
@@ -24,6 +24,21 @@ ActiveRecord::Schema.define(version: 20150721070413) do
     t.string   "quantity"
     t.string   "location"
     t.text     "description"
+  end
+
+  create_table "shipments", force: :cascade do |t|
+    t.string   "name"
+    t.string   "country"
+    t.string   "city"
+    t.string   "state"
+    t.string   "postal_code"
+    t.float    "length"
+    t.float    "width"
+    t.float    "height"
+    t.float    "weight"
+    t.boolean  "cylinder"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
