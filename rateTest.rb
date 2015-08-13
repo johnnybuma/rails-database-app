@@ -1,7 +1,7 @@
 require 'fedex'
 require 'fedex-web-services'
 # config/initializers/fedex.rb handles this if you are in a Rails app and have run the generator above
-# Fedex::WebServices::Definitions.load_definitions('lib')
+Fedex::WebServices::Definitions.load_definitions('lib')
 
 include Fedex::WebServices
 include Fedex::WebServices::Definitions

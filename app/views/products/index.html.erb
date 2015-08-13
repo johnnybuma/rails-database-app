@@ -24,13 +24,13 @@
        <tr>
          <th>Id:</th>
          <th>Name:</th>
-         <th>Size:</th>
-         <th>Color:</th>
-         <th>Weight:</th>
-         <th>Dimensions:</th>
-         <th>Quantity:</th>
-         <th>Location:</th>
-         <th>Description:</th>
+         <th class="notable">Size:</th>
+         <th class="notable">Color:</th>
+         <th class="notable">Weight:</th>
+         <th class="notable">Dimensions:</th>
+         <th class="notable">Quantity:</th>
+         <th class="notable">Location:</th>
+         <th class="notable">Description:</th>
 
          <th>Edit:</th>
        </tr>
@@ -40,13 +40,13 @@
       <tr>
         <td><%= product[:id] %></td>
         <td><%= product.name %></td>
-        <td><%= product.size %></td>
-        <td><%= product.color %></td>
-        <td><%= product.weight %></td>
-        <td><%= product.dimensions %></td>
-        <td><%= product.quantity %></td>
-        <td><%= product.location %></td>
-        <td><%= product.description %></td>
+        <td class="notable"><%= product.size %></td>
+        <td class="notable"><%= product.color %></td>
+        <td class="notable"><%= product.weight %></td>
+        <td class="notable"><%= product.dimensions %></td>
+        <td class="notable"><%= product.quantity %></td>
+        <td class="notable"><%= product.location %></td>
+        <td class="notable"><%= product.description %></td>
 
         <td><%= link_to("Delete", product_path(product), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs btn-danger') %><span style="margin-left: 5px; margin-right: 5px;"></span><%= link_to("Update", edit_product_path(product), :method=> :get, :class => 'button-xs btn-warning') %></td>
 

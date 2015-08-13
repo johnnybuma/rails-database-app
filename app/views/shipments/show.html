@@ -45,19 +45,15 @@
       <td><%= rate.service_name %></td>
       <td><%= number_to_currency(rate.price.to_f / 100) %></td>
     </tr>
-  <% end %>  
-  <% @shipment.usps_rates.each do |rate| %>
-    <tr>
-      <td><%= rate.service_name %></td>
-      <td><%= number_to_currency(rate.price.to_f / 100) %></td>
-    </tr>
   <% end %>
+  
   <% @shipment.ups_rates.each do |rate| %>
     <tr>
       <td><%= rate.service_name %></td>
       <td><%= number_to_currency(rate.price.to_f / 100) %></td>
     </tr>
-  <% end %>  
+  <% end %>    
+  
     
   
 </table>

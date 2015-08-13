@@ -1,7 +1,9 @@
 <h3>Shipments</h3>
 <%= link_to "New Shipment", new_shipment_path %>
-<table style="width:100%; text-align:left;">
+<div class="col-lg-12 table-responsive">
+<table class="table">
   <thead>
+    <th>&nbsp;</th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
     <th>Name</th>
@@ -21,6 +23,8 @@
       <tr>
         <td><%= link_to "View", shipment %></td>
         <td><%= link_to "Edit", edit_shipment_path(shipment) %></td>
+        <td><%= link_to("Delete", shipment_path(shipment), :data => { :confirm => "Are you sure?" }, :method => :delete) %></td>
+
         <td><%= shipment.name %></td>
         <td><%= shipment.country %></td>
         <td><%= shipment.city %></td>
@@ -35,3 +39,4 @@
     <% end %>
   </tbody>
 </table>
+</div>  

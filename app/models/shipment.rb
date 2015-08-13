@@ -30,7 +30,7 @@ class Shipment < ActiveRecord::Base
   end
   
   def ups_rates
-    ups = UPS.new(login: 'johnnybuma', password: 'Hotrod212!', key: '3CF48DAB268973D6')
+    ups = UPS.new(login: Rails.application.secrets.ups_login, password: Rails.application.secrets.ups_password, key: Rails.application.secrets.ups_key)
     get_rates_from_shipper(ups)
   end
   
@@ -39,8 +39,8 @@ class Shipment < ActiveRecord::Base
     get_rates_from_shipper(fedex)
   end
 
-  def usps_rates
-    usps = USPS.new(login: '363INVIS4218', password: '888HP12JY560')
-    get_rates_from_shipper(usps)
-  end
+#  def usps_rates
+#    usps = USPS.new(login: '363INVIS4218', password: '888HP12JY560')
+#    get_rates_from_shipper(usps)
+#  end
 end

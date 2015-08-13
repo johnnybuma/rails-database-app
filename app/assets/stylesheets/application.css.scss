@@ -72,6 +72,18 @@ td, th {
   margin: 5px;
 }
 
+@media screen and (max-width: 550px) {
+  .notable {
+    display: none;
+  }
+}
+
+.table-responsive {
+  padding: 0;
+}
+
+
+
 
 
 

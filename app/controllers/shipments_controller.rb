@@ -1,4 +1,8 @@
 class ShipmentsController < ApplicationController
+  
+  before_filter :authenticate_user!
+
+  
   def index
     @shipments = Shipment.all
   end
@@ -31,6 +35,12 @@ class ShipmentsController < ApplicationController
     else
       render action: "edit"
     end
+  end
+  
+  def destroy
+    Shipment.find(params[:id]).destroy
+    flash[:success] = "Shipment deleted"
+    redirect_to shipments_url
   end
 
 private
