@@ -1,8 +1,9 @@
-<%= link_to "Edit shipment", edit_shipment_path(@shipment) %>&nbsp;|&nbsp;
-<%= link_to "Back to Index", shipments_path %>
+<button class="btn btn-default btn-top"><%= link_to "Edit shipment", edit_shipment_path(@shipment) %></button>&nbsp;<span class="btn-top"></span>&nbsp;
+  <button class="btn btn-default btn-top"><%= link_to "Back to Index", shipments_path %></button>
 
 <h3>Shipping Information</h3>
-<table style="width:100%; text-align:left;">
+<div class="table-responsive">  
+<table class="table">
   <tr>
     <th>Name</th>
     <th>Country</th>
@@ -57,3 +58,4 @@
     
   
 </table>
+</div>                                             
