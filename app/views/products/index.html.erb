@@ -1,15 +1,14 @@
 <div class="container">
+
   <div class="row">
     <div class="col-md-3">
       <h3>Products</h3>
-
     </div>
     <div class="col-md-6 search-div form-inline">
-    <%= form_tag(products_path, :method => "get", id: "search-form", class: "control-group") do %>
+      <%= form_tag(products_path, :method => "get", id: "search-form", class: "control-group") do %>
           <%= text_field_tag :search, params[:search], placeholder: "Search Products", class: "form-control form-margin" %>
           <%= submit_tag "Search", class: " btn btn-primary form-margin" %>
     <% end %>
-
     <% if @products.present? %>
         <%= render @products %>
     <% else %>
@@ -17,7 +16,12 @@
     <% end %>
     </div>
   </div>
-  <div class="row form-margin">
+  <div class="well">
+    <%= link_to "New Product", new_product_path, remote: true, class: "btn btn-primary" %>
+  </div>
+  <div class="new-product"></div>
+
+  <div class="row form-margin product-index">
     <div class="col-lg-12 table-responsive">
      <table class="table">
 
@@ -31,29 +35,15 @@
          <th class="notable">Quantity:</th>
          <th class="notable">Location:</th>
          <th class="notable">Description:</th>
-
          <th>Edit:</th>
+         <th>Delete:</th>
        </tr>
 
-       <% @products.each do |product| %>
-
-      <tr>
-        <td><%= product[:id] %></td>
-        <td><%= product.name %></td>
-        <td class="notable"><%= product.size %></td>
-        <td class="notable"><%= product.color %></td>
-        <td class="notable"><%= product.weight %></td>
-        <td class="notable"><%= product.dimensions %></td>
-        <td class="notable"><%= product.quantity %></td>
-        <td class="notable"><%= product.location %></td>
-        <td class="notable"><%= product.description %></td>
-
-        <td><%= link_to("Delete", product_path(product), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs btn-danger') %><span style="margin-left: 5px; margin-right: 5px;"></span><%= link_to("Update", edit_product_path(product), :method=> :get, :class => 'button-xs btn-warning') %></td>
-
-
-      </tr>
-      <%end%> 
+       
+       <%= render "index" %>
       </table>
     </div>
   </div>
+  
 </div>
+<div id="product-modal" class="modal fade" tabindex="-1"></div>

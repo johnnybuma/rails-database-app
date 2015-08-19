@@ -10,77 +10,14 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  */
 
-tr {
-  color: #fff;
-}
-
-
-.form-margin {
-  margin-top: 10px;
-}
-
-/*
-table, th, td {
-  border: 1px solid black;
-}
-*/
 table {
-   width: 100%;
-   border-collapse: collapse;
- }
-/* Zebra striping */
-tr:nth-of-type(odd) {
-  background: #eee;
-  color: black;
+  margin-top: 15px;
 }
 
-tr:nth-of-type(even) {
-  background: #455C6B;
-  a {
-    color: white;
-  }
-  select {
-    color: black;
-  }
-}
-
-th {
-  background: #333;
-  color: white;
-  font-weight: bold;
-}
-td, th {
-  padding: 6px;
-  border: 1px solid #ccc;
-  text-align: left;
-}
-
-.search-div {
-  margin: 10px;
-  padding: 10px;
-}
-
-.right {
-  float: right;
-}
-
-.button-xs  {
-  margin: 5px;
-}
-
-@media screen and (max-width: 550px) {
-  .notable {
-    display: none;
-  }
-}
-
-.table-responsive {
-  padding: 0;
-}
 
 
 

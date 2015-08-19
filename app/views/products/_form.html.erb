@@ -1,37 +1,31 @@
-<% provide(:title, 'Add Products') %>
-
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <h1>Add New Product</h1>
-    <%= form_for(@product) do |f| %>
+<%= form_for(@product, remote: true, html: { class: "form-horizontal", style: "display: inline;"}) do |f| %>
+  <div class="modal-body">
         <%= render 'shared/error_messages', object: f.object %>
 
-        <%= f.label :name %>
+        <%= f.label :name, class: "control-label" %>
         <%= f.text_field :name, class: 'form-control' %>
 
-        <%= f.label :size %>
+        <%= f.label :size, class: "control-label" %>
         <%= f.text_field :size, class: 'form-control' %>
 
-        <%= f.label :color %>
+        <%= f.label :color, class: "control-label" %>
         <%= f.text_field :color, class: 'form-control' %>
 
-        <%= f.label :weight %>
+        <%= f.label :weight, class: "control-label" %>
         <%= f.text_field :weight, class: 'form-control' %>
 
-        <%= f.label :dimensions %>
+        <%= f.label :dimensions, class: "control-label" %>
         <%= f.text_field :dimensions, class: 'form-control' %>
 
-        <%= f.label :quantity %>
+        <%= f.label :quantity, class: "control-label" %>
         <%= f.text_field :quantity, class: 'form-control' %>
 
-        <%= f.label :location %>
+        <%= f.label :location, class: "control-label" %>
         <%= f.text_field :location, class: 'form-control' %>
 
-        <%= f.label :description %>
+        <%= f.label :description, class: "control-label" %>
         <%= f.text_field :description, class: 'form-control' %>
-
+    
         <%= f.submit "Submit Product to Database", class: "btn btn-large btn-primary form-margin" %>
-    <% end %>
   </div>
-</div>
+<% end %>

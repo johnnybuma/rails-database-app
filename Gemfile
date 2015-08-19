@@ -15,7 +15,9 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~>3.3.4.1'
+gem 'autoprefixer-rails'
+
 gem 'devise'
 group :development do
   gem 'better_errors'

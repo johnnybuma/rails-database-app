@@ -1,7 +1,9 @@
-// import the CSS framework
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.modal-content {
+  padding: 20px;
+}
 // make all images responsive by default
 img {
   @extend .img-responsive;
@@ -79,4 +81,76 @@ section {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-xs;
+}
+
+
+/* My Custom Styles */
+
+tr {
+  color: #fff;
+}
+
+
+.form-margin {
+  margin-top: 10px;
+}
+
+/*
+table, th, td {
+  border: 1px solid black;
+}
+*/
+table {
+   width: 100%;
+   border-collapse: collapse;
+ }
+/* Zebra striping */
+
+tr:nth-of-type(odd) {
+  background: #eee;
+  color: black;
+}
+
+tr:nth-of-type(even) {
+  background: #455C6B;
+  a {
+    color: white;
+  }
+  select {
+    color: black;
+  }
+}
+
+th {
+  background: #333;
+  color: white;
+  font-weight: bold;
+}
+td, th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.search-div {
+  margin: 10px;
+  padding: 10px;
+}
+
+.right {
+  float: right;
+}
+
+.button-xs  {
+  margin: 5px;
+}
+
+@media screen and (max-width: 550px) {
+  .notable {
+    display: none;
+  }
+}
+
+.table-responsive {
+  padding: 0;
 }
