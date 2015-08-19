@@ -1,5 +1,6 @@
 <%= form_for(@product, remote: true, html: { class: "form-horizontal", style: "display: inline;"}) do |f| %>
   <div class="modal-body">
+        <ul class="errors"></ul>
         <%= render 'shared/error_messages', object: f.object %>
 
         <%= f.label :name, class: "control-label" %>
