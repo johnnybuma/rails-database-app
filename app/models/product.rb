@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
 
   def self.search(search)
     search = search.strip
-    where("Name LIKE ?  OR Size LIKE ? OR Color LIKE ? OR cast(Weight as text) LIKE ? OR Dimensions LIKE ? OR Quantity LIKE ? OR Location LIKE ? OR Description LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    where("Name ILIKE ?  OR Size ILIKE ? OR Color ILIKE ? OR cast(Weight as text) ILIKE ? OR Dimensions ILIKE ? OR Quantity ILIKE ? OR Location ILIKE ? OR Description ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
 
   end
 
