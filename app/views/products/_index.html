@@ -1,4 +1,23 @@
-<% @products.each do |product| %>
+<div class="row form-margin product-index" id="index">
+    <div class="col-lg-12 table-responsive">
+     <table class="table">
+
+       <tr>
+         <th>Id:</th>
+         <th>Name:</th>
+         <th class="notable">Size:</th>
+         <th class="notable">Color:</th>
+         <th class="notable">Weight:</th>
+         <th class="notable">Dimensions:</th>
+         <th class="notable">Quantity:</th>
+         <th class="notable">Location:</th>
+         <th class="notable">Description:</th>
+         <th>Edit:</th>
+         <th>Delete:</th>
+       </tr>
+
+       
+       <% @products.each do |product| %>
 
       <tr>
         <td><%= product[:id] %></td>
@@ -20,4 +39,7 @@
 
         
       </tr>
-<% end %> 
+      <% end %> 
+      </table>
+    </div>
+  </div>
