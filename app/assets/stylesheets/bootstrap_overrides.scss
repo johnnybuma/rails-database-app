@@ -1,6 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
+input#form-submit {
+  margin-top: 15px;
+  float: right;
+}
+
 #search-form {
   float: right;
   display: inline-flex;
