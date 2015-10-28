@@ -12,6 +12,7 @@ gem 'fedex-web-services', :require => 'fedex'
 gem 'active_shipping'
 gem 'paperclip'
 gem 'remotipart'
+gem 'aws-sdk'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

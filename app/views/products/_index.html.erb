@@ -4,14 +4,16 @@
 
        <tr>
          <th>Id:</th>
-         <th>Name:</th>
-         <th class="notable">Size:</th>
          <th class="notable">Color:</th>
          <th class="notable">Weight:</th>
          <th class="notable">Dimensions:</th>
          <th class="notable">Quantity:</th>
          <th class="notable">Location:</th>
          <th class="notable">Description:</th>
+         <th class="notable">Origin:</th>
+         <th class="notable">Status:</th>
+         <th class="notable">Destination:</th>
+         <th class="notable">Category:</th>
          <th class="notable">Image:</th>
          <th>Edit:</th>
          <th>Delete:</th>
@@ -22,14 +24,16 @@
 
       <tr>
         <td><%= product[:id] %></td>
-        <td><%= product.name %></td>
-        <td class="notable"><%= product.size %></td>
         <td class="notable"><%= product.color %></td>
         <td class="notable"><%= product.weight %></td>
         <td class="notable"><%= product.dimensions %></td>
         <td class="notable"><%= product.quantity %></td>
         <td class="notable"><%= product.location %></td>
         <td class="notable"><%= product.description %></td>
+        <td class="notable"><%= product.origin %></td>
+        <td class="notable"><%= product.status %></td>
+        <td class="notable"><%= product.destination %></td>
+        <td class="notable"><%= product.category %></td>
         <td class="notable"><a href="<%= product.image.url %>"><%= image_tag product.image.url(:small)%></a></td>
 
         <td>
