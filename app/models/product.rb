@@ -3,7 +3,8 @@ class Product < ActiveRecord::Base
   validates :name, :color, :size, :weight, :dimensions, presence: true
   validates_uniqueness_of :name, :message => "*  [%{value}] has already been recorded, please review database"
   has_attached_file :image, styles: { small: "64x64", med: "100x100", large: "200x200" }
-  do_not_validate_attachment_file_type :image
+  #do_not_validate_attachment_file_type :image
+  validates_attachment_content_type :image, :content_type => /\Aimage/
 
 
   def self.search(search)

@@ -27,6 +27,7 @@ class ProductsController < ApplicationController
   def create
     @products = Product.all
     @product = Product.create(product_params)
+
   end
   #def create
   #  @product = Product.new(product_params)
@@ -56,7 +57,7 @@ class ProductsController < ApplicationController
   #    render 'edit'
   #  end  
   #end
-  ##
+
   def delete
     @product = Product.find(params[:product_id])
   end
