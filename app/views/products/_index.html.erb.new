@@ -1,0 +1,38 @@
+<div class="row form-margin product-index" id="index">
+  <div class="col-lg-12">
+
+
+
+      <% @products.each do |product| %>
+        <div class="panel panel-default">
+          <div class="panel-body">
+          <div class="panel-heading" role="tab">
+
+          <ul>
+            <li><%= product[:id] %></li>
+            <li><%= product.name %></li>
+            <li class="notable"><%= product.size %></li>
+            <li class="notable"><%= product.color %></li>
+            <li class="notable"><%= product.weight %></li>
+            <li class="notable"><%= product.dimensions %></li>
+            <li class="notable"><%= product.quantity %></li>
+            <li class="notable"><%= product.location %></li>
+            <li class="notable"><%= product.description %></li>
+            <li class="notable"><a href="<%= product.image.url %>"><%= image_tag product.image.url(:small)%></a></li>
+
+            <li>
+              <%= link_to "Edit", edit_product_path(product), remote: true, class: "btn btn-warning" %>
+            </li>
+            <li>
+              <%= link_to "Delete", product_delete_path(product), remote: true, class: "btn btn-danger" %>
+            </li>
+
+
+          </ul>
+          </div>
+          </div>
+        </div>
+
+      <% end %>
+  </div>
+</div>
