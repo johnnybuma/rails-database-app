@@ -56,6 +56,7 @@ class ProductsController < ApplicationController
   #    render 'edit'
   #  end  
   #end
+  ##
   def delete
     @product = Product.find(params[:product_id])
   end
