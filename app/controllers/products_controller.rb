@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  skip_before_filter :verify_authenticity_token, :only => [:create]
+
   respond_to :html, :js
   before_filter :authenticate_user!
   
@@ -69,7 +71,7 @@ class ProductsController < ApplicationController
   #end
 private  
   def product_params
-    params.require(:product).permit(:id, :name, :size, :color, :weight, :dimensions, :quantity, :location, :description)
+    params.require(:product).permit(:id, :name, :size, :color, :weight, :dimensions, :quantity, :location, :description, :image)
   end  
   
 end
