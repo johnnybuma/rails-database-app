@@ -1,1 +1,0 @@
-Fedex::WebServices::Definitions.load_definitions('lib')
