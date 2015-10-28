@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   #get 'edit_products' => 'products#edit'
 
   #root to: 'visitors#index'
-  root to: 'shipments#index'
+  root to: 'products#index'
   devise_for :users
   resources :users
   
