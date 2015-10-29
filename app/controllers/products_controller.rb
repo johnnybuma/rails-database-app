@@ -8,18 +8,42 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
   
+  #def index
+  #  @products = Product.all
+  #  if params[:search]
+  #    @products = Product.search(params[:search]).order("id")
+  #  else
+  #    @products = Product.all.order('id')
+  #  end
+
+
+  #end
   def index
+    @products = Product.where(nil) # creates an anonymous scope
+    @products = @products.color(params[:color]) if params[:color].present?
+    @products = @products.location(params[:location]) if params[:location].present?
+    @products = @products.name(params[:name]) if params[:name].present?
+    @products = @products.weight(params[:weight]) if params[:weight].present?
+    @products = @products.dimensions(params[:dimensions]) if params[:dimensions].present?
+    @products = @products.quantity(params[:quantity]) if params[:quantity].present?
+    @products = @products.description(params[:description]) if params[:description].present?
+    @products = @products.origin(params[:origin]) if params[:origin].present?
+    @products = @products.status(params[:status]) if params[:status].present?
+    @products = @products.destination(params[:destination]) if params[:destination].present?
+    @products = @products.category(params[:category]) if params[:category].present?
+    #old code
     @products = Product.all
-    if params[:search]
-      @products = Product.search(params[:search]).order("id")
-    else
-      @products = Product.all.order('id')
-    end
+      if params[:search]
+        @products = Product.search(params[:search]).order("id")
+      else
+        @products = Product.all.order('id')
+      end
 
+  end
+  
+  def searchnew
 
-  end  
-  
-  
+  end
   
   def show
     @product = Product.find(params[:id])

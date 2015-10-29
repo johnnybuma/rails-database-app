@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :shipments
   resources :products do
     get "delete"
+    get "searchnew"
   end  
 
   #get 'Add Products' => 'products#new'
