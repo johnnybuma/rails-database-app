@@ -32,12 +32,8 @@ class ProductsController < ApplicationController
     @products = @products.destination(params[:destination]) if params[:destination].present?
     @products = @products.category(params[:category]) if params[:category].present?
     #old code
-    @products = Product.all
-      if params[:search]
-        @products = Product.search(params[:search]).order("id")
-      else
-        @products = Product.all.order('id')
-      end
+    @products = @products.search(params[:search]) if params[:search].present?
+
 
   end
   
