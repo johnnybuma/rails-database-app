@@ -3,6 +3,9 @@
         <ul class="errors"></ul>
         <%= render 'shared/error_messages', object: f.object %>
 
+        <%= f.label :name, class: "control-label" %>
+        <%= f.text_field :name, class: 'form-control' %>
+
         <%= f.label :color, class: "control-label" %>
         <%= f.text_field :color, class: 'form-control' %>
 
