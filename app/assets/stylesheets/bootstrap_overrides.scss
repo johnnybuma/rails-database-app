@@ -1,7 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
+.navbar-header {
+  float: right;
+}
 
 
 input#form-submit {
