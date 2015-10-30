@@ -18,3 +18,95 @@
 //= require jquery.remotipart
 //= require_tree .
 
+filter = function () {
+    var usedNames = {};
+    $('#color > option').each(function () {
+        if (usedNames[this.value]) {
+            $(this).remove();
+        } else {
+            usedNames[this.value] = this.text;
+        }
+    });
+
+    var usedNames1 = {};
+    $('#weight > option').each(function () {
+        if (usedNames1[this.value]) {
+            $(this).remove();
+        } else {
+            usedNames1[this.value] = this.text;
+        }
+    });
+
+    var usedNames2 = {};
+    $('#dimensions > option').each(function () {
+        if (usedNames2[this.value]) {
+            $(this).remove();
+        } else {
+            usedNames2[this.value] = this.text;
+        }
+    });
+
+    var usedNames3 = {};
+    $('#quantity > option').each(function () {
+        if (usedNames3[this.value]) {
+            $(this).remove();
+        } else {
+            usedNames3[this.value] = this.text;
+        }
+    });
+
+    var usedNames4 = {};
+    $('#location > option').each(function () {
+        if (usedNames4[this.value]) {
+            $(this).remove();
+        } else {
+            usedNames4[this.value] = this.text;
+        }
+    });
+
+    var usedNames5 = {};
+    $('#description > option').each(function () {
+        if (usedNames5[this.value]) {
+            $(this).remove();
+        } else {
+            usedNames5[this.value] = this.text;
+        }
+    });
+
+    var usedNames6 = {};
+    $('#origin > option').each(function () {
+        if (usedNames6[this.value]) {
+            $(this).remove();
+        } else {
+            usedNames6[this.value] = this.text;
+        }
+    });
+
+    var usedNames7 = {};
+    $('#status > option').each(function () {
+        if (usedNames7[this.value]) {
+            $(this).remove();
+        } else {
+            usedNames7[this.value] = this.text;
+        }
+    });
+
+    var usedNames8 = {};
+    $('#destination > option').each(function () {
+        if (usedNames8[this.value]) {
+            $(this).remove();
+        } else {
+            usedNames8[this.value] = this.text;
+        }
+    });
+
+    var usedNames9 = {};
+    $('#category > option').each(function () {
+        if (usedNames9[this.value]) {
+            $(this).remove();
+        } else {
+            usedNames9[this.value] = this.text;
+        }
+    });
+
+};

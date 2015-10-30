@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
     @products = Product.where(nil) # creates an anonymous scope
     @products = @products.color(params[:color]) if params[:color].present?
     @products = @products.location(params[:location]) if params[:location].present?
-    @products = @products.name(params[:name]) if params[:name].present?
+    @products = @products.name(params[:item]) if params[:item].present?
     @products = @products.weight(params[:weight]) if params[:weight].present?
     @products = @products.dimensions(params[:dimensions]) if params[:dimensions].present?
     @products = @products.quantity(params[:quantity]) if params[:quantity].present?
@@ -33,6 +33,9 @@ class ProductsController < ApplicationController
     @products = @products.category(params[:category]) if params[:category].present?
     #old code
     @products = @products.search(params[:search]) if params[:search].present?
+
+
+
 
 
   end
@@ -93,7 +96,7 @@ class ProductsController < ApplicationController
   #end
 private  
   def product_params
-    params.require(:product).permit(:id, :name, :size, :color, :weight, :dimensions, :quantity, :location, :description, :image, :origin, :status, :destination, :category)
+    params.require(:product).permit(:id, :item, :size, :color, :weight, :dimensions, :quantity, :location, :description, :image, :origin, :status, :destination, :category)
   end
 
 
