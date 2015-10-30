@@ -20,6 +20,7 @@ class ProductsController < ApplicationController
   #end
   def index
     @products = Product.where(nil) # creates an anonymous scope
+    @products = Product.all.order(:item)
     @products = @products.color(params[:color]).order(:item) if params[:color].present?
     @products = @products.location(params[:location]).order(:item) if params[:location].present?
     @products = @products.name(params[:item]).order(:item) if params[:item].present?
