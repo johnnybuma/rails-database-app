@@ -3,8 +3,7 @@
      <table class="table table-bordered table-striped">
        <%= form_tag(products_path, remote:true, :method => "get", id: "search-form", class: "control-group") do %>
        <tr>
-         <th class="notable"></th>
-         <th class="notable"></th>
+         <th class="notable">Item:</th>
          <th class="notable">    <%= select_tag :color, options_from_collection_for_select(@products, :color, :color), options = { prompt: 'Color' }
 
          %>
@@ -54,28 +53,11 @@
        </tr>
        <% end %>
 
-     <tr>
-         <th>Id:</th>
-         <th class="notable">Item:</th>
-         <th class="notable">Color:</th>
-         <th class="notable">Weight:</th>
-         <th class="notable">Dimensions:</th>
-         <th class="notable">Quantity:</th>
-         <th class="notable">Location:</th>
-         <th class="notable">Description:</th>
-         <th class="notable">Origin:</th>
-         <th class="notable">Status:</th>
-         <th class="notable">Destination:</th>
-         <th class="notable">Category:</th>
-         <th class="notable">Image:</th>
-         <th>Edit:</th>
-         <th>Delete:</th>
-       </tr>
+
 
        <% @products.each do |product| %>
 
       <tr>
-        <td><%= product[:id] %></td>
         <td class="notable"><%= product.item %></td>
         <td class="notable"><%= product.color %></td>
         <td class="notable"><%= product.weight %></td>
