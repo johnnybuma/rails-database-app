@@ -5,6 +5,8 @@ class Product < ActiveRecord::Base
   has_attached_file :image, styles: { small: "64x64", med: "100x100", large: "200x200" }
   #do_not_validate_attachment_file_type :image
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+
+
 # declaring column search scopes
   scope :color, -> (color) { where color: color }
   scope :location, -> (location) { where location: location }
@@ -21,9 +23,9 @@ class Product < ActiveRecord::Base
   def self.search(search)
     search = search.strip
     # This syntax is for postgresql for heroku   
-    #where("Name ILIKE ? OR Color ILIKE ? OR cast(Weight as text) ILIKE ? OR Dimensions ILIKE ? OR Quantity ILIKE ? OR Location ILIKE ? OR Description ILIKE ? OR Origin ILIKE ? OR Status ILIKE ? OR Destination ILIKE ? OR Category ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    where("Name ILIKE ? OR Color ILIKE ? OR Weight ILIKE ? OR Dimensions ILIKE ? OR Quantity ILIKE ? OR Location ILIKE ? OR Description ILIKE ? OR Origin ILIKE ? OR Status ILIKE ? OR Destination ILIKE ? OR Category ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
     #This syntax is for sqlite3 ORIGINAL
-    where("Name LIKE ?  OR Size LIKE ? OR Color LIKE ? OR cast(Weight as text) LIKE ? OR Dimensions LIKE ? OR Quantity LIKE ? OR Location LIKE ? OR Description LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    #where("Name LIKE ? OR Color LIKE ? OR Weight LIKE ? OR Dimensions LIKE ? OR Quantity LIKE ? OR Location LIKE ? OR Description LIKE ? OR Origin LIKE ? OR Status LIKE ? OR Destination LIKE ? OR Category LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
 
   end
   #def self.search(search)
