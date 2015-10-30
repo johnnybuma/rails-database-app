@@ -20,19 +20,19 @@ class ProductsController < ApplicationController
   #end
   def index
     @products = Product.where(nil) # creates an anonymous scope
-    @products = @products.color(params[:color]) if params[:color].present?
-    @products = @products.location(params[:location]) if params[:location].present?
-    @products = @products.name(params[:item]) if params[:item].present?
-    @products = @products.weight(params[:weight]) if params[:weight].present?
-    @products = @products.dimensions(params[:dimensions]) if params[:dimensions].present?
-    @products = @products.quantity(params[:quantity]) if params[:quantity].present?
-    @products = @products.description(params[:description]) if params[:description].present?
-    @products = @products.origin(params[:origin]) if params[:origin].present?
-    @products = @products.status(params[:status]) if params[:status].present?
-    @products = @products.destination(params[:destination]) if params[:destination].present?
-    @products = @products.category(params[:category]) if params[:category].present?
+    @products = @products.color(params[:color]).order(:item) if params[:color].present?
+    @products = @products.location(params[:location]).order(:item) if params[:location].present?
+    @products = @products.name(params[:item]).order(:item) if params[:item].present?
+    @products = @products.weight(params[:weight]).order(:item) if params[:weight].present?
+    @products = @products.dimensions(params[:dimensions]).order(:item) if params[:dimensions].present?
+    @products = @products.quantity(params[:quantity]).order(:item) if params[:quantity].present?
+    @products = @products.description(params[:description]).order(:item) if params[:description].present?
+    @products = @products.origin(params[:origin]).order(:item) if params[:origin].present?
+    @products = @products.status(params[:status]).order(:item) if params[:status].present?
+    @products = @products.destination(params[:destination]).order(:item) if params[:destination].present?
+    @products = @products.category(params[:category]).order(:item) if params[:category].present?
     #old code
-    @products = @products.search(params[:search]) if params[:search].present?
+    @products = @products.search(params[:search]).order(:item) if params[:search].present?
 
 
 
