@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.container {
+  width: 95%;
+}
+
 .navbar-header {
   float: right;
 }
