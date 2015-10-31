@@ -10,7 +10,7 @@
 
 
             <tr>
-                     <th>Item:</th>
+                     <th class="notable">Item:</th>
                      <th class="notable">    <%= select_tag :color, options_from_collection_for_select(@products, :color, :color), options = { prompt: 'Color' }
 
                      %>
@@ -39,7 +39,7 @@
 
                      %>
                      </th>
-                     <th class="notable">    <%= select_tag :status, options_from_collection_for_select(@products, :status, :status), options = { prompt: 'Status' }
+                     <th>    <%= select_tag :status, options_from_collection_for_select(@products, :status, :status), options = { prompt: 'Status' }
 
                      %>
                      </th>
@@ -51,10 +51,13 @@
 
                      %>
                      </th>
-                     <th class="notable">    <%= submit_tag "Search", id: "but-search", class: " btn btn-primary form-margin" %>
+                     <th>    <%= submit_tag "Search", id: "but-filter", class: " btn btn-primary form-margin" %>
                      </th>
-                     <th></th>
-                     <th></th>
+              <% if current_user.admin? %>
+
+            <th></th>
+                     <th class="notable"></th>
+                  <% end %>
             </tr>
 
 
@@ -72,18 +75,18 @@
                 <td class="notable"><%= product.location %></td>
                 <td class="notable"><%= product.description %></td>
                 <td class="notable"><%= product.origin %></td>
-                <td class="notable"><%= product.status %></td>
+                <td><%= product.status %></td>
                 <td class="notable"><%= product.destination %></td>
                 <td class="notable"><%= product.category %></td>
                 <td><a href="<%= product.image.url %>"><%= image_tag product.image.url(:small)%></a></td>
-
+                <% if current_user.admin? %>
                 <td>
                   <%= link_to "Edit", edit_product_path(product), remote: true, class: "btn btn-warning" %>
                 </td>
-                <td>
+                <td class="notable">
                   <%= link_to "Delete", product_delete_path(product), remote: true, class: "btn btn-danger" %>
                 </td>
-
+                <% end %>
             </tr>
             <% end %>
 
