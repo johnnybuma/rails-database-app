@@ -1,89 +1,98 @@
 <div class="row form-margin product-index" id="index">
-    <div class="col-lg-12 table-responsive">
-      <!-- Form tag must wrap the table for search to work in chrome!!! Damnit Finally -->
-      <%= form_tag(products_path, remote:true, :method => "get", id: "search-form", class: "control-group") do %>
 
-    <table class="table table-bordered table-striped">
-       <tr>
-         <th>Item:</th>
-         <th class="notable">    <%= select_tag :color, options_from_collection_for_select(@products, :color, :color), options = { prompt: 'Color' }
-
-         %>
-         </th>
-         <th class="notable">    <%= select_tag :weight, options_from_collection_for_select(@products, :weight, :weight), options = { prompt: 'Weight' }
-
-         %>
-         </th>
-         <th class="notable">    <%= select_tag :dimensions, options_from_collection_for_select(@products, :dimensions, :dimensions), options = { prompt: 'Dimensions' }
-
-         %>
-         </th>
-         <th class="notable">    <%= select_tag :quantity, options_from_collection_for_select(@products, :quantity, :quantity), options = { prompt: 'Quantity' }
-
-         %>
-         </th>
-         <th class="notable">    <%= select_tag :location, options_from_collection_for_select(@products, :location, :location), options = { prompt: 'Location' }
-
-         %>
-         </th>
-         <th class="notable">    <%= select_tag :description, options_from_collection_for_select(@products, :description, :description), options = { prompt: 'Description' }
-
-         %>
-         </th>
-         <th class="notable">    <%= select_tag :origin, options_from_collection_for_select(@products, :origin, :origin), options = { prompt: 'Origin' }
-
-         %>
-         </th>
-         <th class="notable">    <%= select_tag :status, options_from_collection_for_select(@products, :status, :status), options = { prompt: 'Status' }
-
-         %>
-         </th>
-         <th class="notable">    <%= select_tag :destination, options_from_collection_for_select(@products, :destination, :destination), options = { prompt: 'Destination' }
-
-         %>
-         </th>
-         <th class="notable">    <%= select_tag :category, options_from_collection_for_select(@products, :category, :category), options = { prompt: 'Category' }
-
-         %>
-         </th>
-         <th class="notable">    <%= submit_tag "Search", id: "but-search", class: " btn btn-primary form-margin" %>
-         </th>
-         <th></th>
-         <th></th>
-
-
-       </tr>
+<div class="col-lg-12 table-responsive">
+  <!-- Form tag must wrap the table for search to work in chrome!!! Damnit Finally -->
+  <%= form_tag(products_path, remote:true, :method => "get", class: "control-group") do %>
 
 
 
-       <% @products.each do |product| %>
+        <table class="table table-bordered table-striped">
 
-      <tr>
-        <td class="notable"><%= product.item %></td>
-        <td class="notable"><%= product.color %></td>
-        <td class="notable"><%= product.weight %></td>
-        <td class="notable"><%= product.dimensions %></td>
-        <td class="notable"><%= product.quantity %></td>
-        <td class="notable"><%= product.location %></td>
-        <td class="notable"><%= product.description %></td>
-        <td class="notable"><%= product.origin %></td>
-        <td class="notable"><%= product.status %></td>
-        <td class="notable"><%= product.destination %></td>
-        <td class="notable"><%= product.category %></td>
-        <td><a href="<%= product.image.url %>"><%= image_tag product.image.url(:small)%></a></td>
 
-        <td>
-          <%= link_to "Edit", edit_product_path(product), remote: true, class: "btn btn-warning" %>
-        </td>
-        <td>
-          <%= link_to "Delete", product_delete_path(product), remote: true, class: "btn btn-danger" %>
-        </td>
+            <tr>
+                     <th>Item:</th>
+                     <th class="notable">    <%= select_tag :color, options_from_collection_for_select(@products, :color, :color), options = { prompt: 'Color' }
 
-        
-      </tr>
-      <% end %> 
-      </table>
-      <% end %>
+                     %>
+                     </th>
+                     <th class="notable">    <%= select_tag :weight, options_from_collection_for_select(@products, :weight, :weight), options = { prompt: 'Weight' }
+
+                     %>
+                     </th>
+                     <th class="notable">    <%= select_tag :dimensions, options_from_collection_for_select(@products, :dimensions, :dimensions), options = { prompt: 'Dimensions' }
+
+                     %>
+                     </th>
+                     <th class="notable">    <%= select_tag :quantity, options_from_collection_for_select(@products, :quantity, :quantity), options = { prompt: 'Quantity' }
+
+                     %>
+                     </th>
+                     <th class="notable">    <%= select_tag :location, options_from_collection_for_select(@products, :location, :location), options = { prompt: 'Location' }
+
+                     %>
+                     </th>
+                     <th class="notable">    <%= select_tag :description, options_from_collection_for_select(@products, :description, :description), options = { prompt: 'Description' }
+
+                     %>
+                     </th>
+                     <th class="notable">    <%= select_tag :origin, options_from_collection_for_select(@products, :origin, :origin), options = { prompt: 'Origin' }
+
+                     %>
+                     </th>
+                     <th class="notable">    <%= select_tag :status, options_from_collection_for_select(@products, :status, :status), options = { prompt: 'Status' }
+
+                     %>
+                     </th>
+                     <th class="notable">    <%= select_tag :destination, options_from_collection_for_select(@products, :destination, :destination), options = { prompt: 'Destination' }
+
+                     %>
+                     </th>
+                     <th class="notable">    <%= select_tag :category, options_from_collection_for_select(@products, :category, :category), options = { prompt: 'Category' }
+
+                     %>
+                     </th>
+                     <th class="notable">    <%= submit_tag "Search", id: "but-search", class: " btn btn-primary form-margin" %>
+                     </th>
+                     <th></th>
+                     <th></th>
+            </tr>
+
+
+
+
+
+            <% @products.each do |product| %>
+
+            <tr>
+                <td class="notable"><%= product.item %></td>
+                <td class="notable"><%= product.color %></td>
+                <td class="notable"><%= product.weight %></td>
+                <td class="notable"><%= product.dimensions %></td>
+                <td class="notable"><%= product.quantity %></td>
+                <td class="notable"><%= product.location %></td>
+                <td class="notable"><%= product.description %></td>
+                <td class="notable"><%= product.origin %></td>
+                <td class="notable"><%= product.status %></td>
+                <td class="notable"><%= product.destination %></td>
+                <td class="notable"><%= product.category %></td>
+                <td><a href="<%= product.image.url %>"><%= image_tag product.image.url(:small)%></a></td>
+
+                <td>
+                  <%= link_to "Edit", edit_product_path(product), remote: true, class: "btn btn-warning" %>
+                </td>
+                <td>
+                  <%= link_to "Delete", product_delete_path(product), remote: true, class: "btn btn-danger" %>
+                </td>
+
+            </tr>
+            <% end %>
+
+    </table>
+            <% end %>
+
+
+
 
     </div>
-  </div>
+
+</div>
