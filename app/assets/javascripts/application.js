@@ -16,7 +16,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.remotipart
+//= require nprogress
+//= require nprogress-turbolinks
+//= require nprogress-ajax
 //= require_tree .
+
+$(document).ready(function() {
+    NProgress.start();
+});
 
 filter = function () {
     var usedNames = {};
