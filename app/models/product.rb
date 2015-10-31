@@ -34,9 +34,7 @@ class Product < ActiveRecord::Base
   #  where("Name LIKE ?", "%#{search}%")
   #end
 
-  def self.unique
-    return self.uniq
-  end
+
 
 
 
