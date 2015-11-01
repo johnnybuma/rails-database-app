@@ -207,3 +207,13 @@ td, th {
 .col-md-6 {
   min-height: 50px;
 }
+/* New Styles TODO: Ask Tara? */
+td, th {
+  width: 150px;
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
+select {
+  max-width: 100%;
+}

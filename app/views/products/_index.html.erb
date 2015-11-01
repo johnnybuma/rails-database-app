@@ -39,7 +39,7 @@
 
                      %>
                      </th>
-                     <th>    <%= select_tag :status, options_from_collection_for_select(@products, :status, :status), options = { prompt: 'Status' }
+                     <th class="notable">    <%= select_tag :status, options_from_collection_for_select(@products, :status, :status), options = { prompt: 'Status' }
 
                      %>
                      </th>
@@ -47,7 +47,7 @@
 
                      %>
                      </th>
-                     <th class="notable">    <%= select_tag :category, options_from_collection_for_select(@products, :category, :category), options = { prompt: 'Category' }
+                     <th>    <%= select_tag :category, options_from_collection_for_select(@products, :category, :category), options = { prompt: 'Category' }
 
                      %>
                      </th>
@@ -71,11 +71,11 @@
                 <td class="notable"><%= product.color %></td>
                 <td class="notable"><%= product.weight %></td>
                 <td class="notable"><%= product.dimensions %></td>
-                <td class="notable"><%= product.quantity %></td>
+                <td><%= product.quantity %></td>
                 <td class="notable"><%= product.location %></td>
                 <td class="notable"><%= product.description %></td>
                 <td class="notable"><%= product.origin %></td>
-                <td><%= product.status %></td>
+                <td class="notable"><%= product.status %></td>
                 <td class="notable"><%= product.destination %></td>
                 <td class="notable"><%= product.category %></td>
                 <td><a href="<%= product.image.url %>"><%= image_tag product.image.url(:small)%></a></td>
