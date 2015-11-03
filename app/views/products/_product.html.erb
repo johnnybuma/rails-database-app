@@ -1,27 +1,57 @@
 <div id="showit">
-  <h3>Product</h3>
+  <div class="container">
+  <h1><%= " #{@product.item}" %></h1>
+
+  <div class="row">
+   <div class="col-md-12" style="margin-bottom: 10px;">
+  <%= link_to "Back", products_path, class: "btn btn-primary" %>
+
+  <%= link_to 'Edit', edit_product_path(@product), remote: true, class: 'btn btn-warning' %>
+  <%= link_to "Delete", product_delete_path(@product), remote: true, class: "btn btn-danger" %>
+   </div>
+</div>
 
   <div class="row">
 
-    <div class="col-md-3">
-      <p>Item: <%= @product.item if @product.item %></p>
-      <p>Color: <%= @product.color if @product.color %></p>
-      <p>Weight: <%= @product.weight if @product.weight %></p>
-      <p>Dimensions: <%= @product.dimensions if @product.dimensions %></p>
-      <p>Quantity: <%= @product.quantity if @product.quantity %></p>
-      <p>Location: <%= @product.location if @product.location %></p>
-      <p>Description: <%= @product.description if @product.description %></p>
-      <p>Origin: <%= @product.origin if @product.origin %></p>
-      <p>Status: <%= @product.status if @product.status %></p>
-      <p>Destination: <%= @product.destination if @product.destination %></p>
-      <p>Category: <%= @product.category if @product.category %></p>
-      <p><%= link_to 'Edit', edit_product_path(@product), remote: true, class: 'btn btn-warning' %></p>
-      <p><%= link_to "Delete", product_delete_path(@product), remote: true, class: "btn btn-danger" %></p>
+    <div class="col-md-6">
+    <table>
+      <tr>
+      <th>Color: </th>
+        <td><%= @product.color if @product.color %></td>
+      </tr>
+      <tr>
+      <th>Weight:</th><td> <%= @product.weight if @product.weight %></td>
+      </tr>
+      <tr>
+      <th>Dimensions:</th><td> <%= @product.dimensions if @product.dimensions %></td>
+      </tr>
+      <tr>
+      <th>Quantity:</th><td <%= @product.quantity if @product.quantity %></td>
+      </tr>
+      <tr>
+      <th>Location:</th><td> <%= @product.location if @product.location %></td>
+      </tr>
+      <tr>
+      <th>Description:</th><td> <%= @product.description if @product.description %></td>
+      </tr>
+      <tr>
+      <th>Origin:</th><td> <%= @product.origin if @product.origin %></td>
+      </tr>
+      <tr>
+      <th>Status:</th><td> <%= @product.status if @product.status %></td>
+      </tr>
+      <tr>
+      <th>Destination:</th><td> <%= @product.destination if @product.destination %></td>
+      </tr>
+      <tr>
+      <th>Category:</th><td> <%= @product.category if @product.category %></td>
+      </tr>
+    </table>
     </div>
-    <div class="col-md-9">
-      <p>Image: <%= image_tag @product.image.url %></p>
+    <div class="col-md-6"><%= image_tag @product.image.url %>
     </div>
 
+  </div>
   </div>
 </div>
 
