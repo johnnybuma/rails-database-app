@@ -7,17 +7,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
   end
-  
-  #def index
-  #  @products = Product.all
-  #  if params[:search]
-  #    @products = Product.search(params[:search]).order("id")
-  #  else
-  #    @products = Product.all.order('id')
-  #  end
 
-
-  #end
   def index
     @products = Product.where(nil) # creates an anonymous scope
     #@products = Product.all.order(:item)
@@ -39,11 +29,6 @@ class ProductsController < ApplicationController
 
 
 
-
-  end
-  
-  def searchnew
-
   end
   
   def show
@@ -54,15 +39,6 @@ class ProductsController < ApplicationController
     @product = Product.create(product_params)
 
   end
-  #def create
-  #  @product = Product.new(product_params)
-  #  if @product.save
-  #    flash[:success] = "You have added the product to the database!"
-  #    redirect_to @product
-  #  else
-  #    render 'new'
-  #  end  
-  #end
 
   def edit
     @product = Product.find(params[:id])
@@ -73,15 +49,6 @@ class ProductsController < ApplicationController
     
     @product.update_attributes(product_params)
   end
-  #def update
-  #  @product = Product.find(params[:id])
-  #  if @product.update_attributes(product_params)
-  #    flash[:success] = "Product Updated!"
-  #    redirect_to products_url
-  #  else
-  #    render 'edit'
-  #  end  
-  #end
 
   def delete
     @product = Product.find(params[:product_id])
@@ -91,11 +58,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
   end
-  #def destroy
-  #  Product.find(params[:id]).destroy
-  #  flash[:success] = "Product deleted"
-  #  redirect_to products_url
-  #end
+
 private  
   def product_params
     params.require(:product).permit(:id, :item, :size, :color, :weight, :dimensions, :quantity, :location, :description, :image, :origin, :status, :destination, :category)

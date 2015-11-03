@@ -67,7 +67,7 @@
             <% @products.each do |product| %>
 
             <tr>
-                <td class="notable"><%= product.item %></td>
+                <td class="notable"><%= link_to product.item, product_path(product) %></td>
                 <td class="notable"><%= product.color %></td>
                 <td class="notable"><%= product.weight %></td>
                 <td class="notable"><%= product.dimensions %></td>

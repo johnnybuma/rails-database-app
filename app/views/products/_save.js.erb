@@ -5,7 +5,12 @@ $("ul.errors").html("")
   <% end %>
 <% else %>
   $(".product-index").html("<%= escape_javascript(render 'index') %>")
+
   $("#product-modal").modal("hide")
+
+
 <% end %>
+$("#showit").html("<%= escape_javascript(render 'product') %>")
+
 
 filter();
