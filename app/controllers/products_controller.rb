@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
 
     @products = Product.filter(params.slice(:item, :color, :weight, :dimensions, :quantity, :description, :origin, :destination, :category, :status, :location)).paginate(page: params[:page], per_page: 1)
 
-    @products = Product.search(params[:search]).paginate(page: params[:page], per_page: 1) if params[:search].present?
+    @products = Product.search(params[:search]).paginate(page: params[:page], per_page: 10) if params[:search].present?
 
     #@products = Product.all.paginate(page: params[:page], per_page: 1)
 
@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
     @nofilter = Product.all
     @products = Product.all
     @product = Product.create(product_params)
-    @products = Product.all.paginate(page: params[:page], per_page: 1)
+    @products = Product.all.paginate(page: params[:page], per_page: 10)
 
 
   end
@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     
     @product.update_attributes(product_params)
-    @products = Product.all.paginate(page: params[:page], per_page: 1)
+    @products = Product.all.paginate(page: params[:page], per_page: 10)
 
   end
 
@@ -61,7 +61,7 @@ class ProductsController < ApplicationController
     @products = Product.all
     @product = Product.find(params[:id])
     @product.destroy
-    @products = Product.all.paginate(page: params[:page], per_page: 1)
+    @products = Product.all.paginate(page: params[:page], per_page: 10)
 
   end
 
