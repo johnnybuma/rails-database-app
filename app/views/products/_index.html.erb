@@ -11,43 +11,43 @@
 
             <tr>
                      <th class="notable">Item:</th>
-                     <th class="notable">    <%= select_tag :color, options_from_collection_for_select(@products, :color, :color), options = { prompt: 'Color' }
+                     <th class="notable">    <%= select_tag :color, options_from_collection_for_select(@nofilter, :color, :color), options = { prompt: 'Color' }
 
                      %>
                      </th>
-                     <th class="notable">    <%= select_tag :weight, options_from_collection_for_select(@products, :weight, :weight), options = { prompt: 'Weight' }
+                     <th class="notable">    <%= select_tag :weight, options_from_collection_for_select(@nofilter, :weight, :weight), options = { prompt: 'Weight' }
 
                      %>
                      </th>
-                     <th class="notable">    <%= select_tag :dimensions, options_from_collection_for_select(@products, :dimensions, :dimensions), options = { prompt: 'Dimensions' }
+                     <th class="notable">    <%= select_tag :dimensions, options_from_collection_for_select(@nofilter, :dimensions, :dimensions), options = { prompt: 'Dimensions' }
 
                      %>
                      </th>
-                     <th class="notable">    <%= select_tag :quantity, options_from_collection_for_select(@products, :quantity, :quantity), options = { prompt: 'Quantity' }
+                     <th class="notable">    <%= select_tag :quantity, options_from_collection_for_select(@nofilter, :quantity, :quantity), options = { prompt: 'Quantity' }
 
                      %>
                      </th>
-                     <th class="notable">    <%= select_tag :location, options_from_collection_for_select(@products, :location, :location), options = { prompt: 'Location' }
+                     <th class="notable">    <%= select_tag :location, options_from_collection_for_select(@nofilter, :location, :location), options = { prompt: 'Location' }
 
                      %>
                      </th>
-                     <th class="notable">    <%= select_tag :description, options_from_collection_for_select(@products, :description, :description), options = { prompt: 'Description' }
+                     <th class="notable">    <%= select_tag :description, options_from_collection_for_select(@nofilter, :description, :description), options = { prompt: 'Description' }
 
                      %>
                      </th>
-                     <th class="notable">    <%= select_tag :origin, options_from_collection_for_select(@products, :origin, :origin), options = { prompt: 'Origin' }
+                     <th class="notable">    <%= select_tag :origin, options_from_collection_for_select(@nofilter, :origin, :origin), options = { prompt: 'Origin' }
 
                      %>
                      </th>
-                     <th class="notable">    <%= select_tag :status, options_from_collection_for_select(@products, :status, :status), options = { prompt: 'Status' }
+                     <th class="notable">    <%= select_tag :status, options_from_collection_for_select(@nofilter, :status, :status), options = { prompt: 'Status' }
 
                      %>
                      </th>
-                     <th class="notable">    <%= select_tag :destination, options_from_collection_for_select(@products, :destination, :destination), options = { prompt: 'Destination' }
+                     <th class="notable">    <%= select_tag :destination, options_from_collection_for_select(@nofilter, :destination, :destination), options = { prompt: 'Destination' }
 
                      %>
                      </th>
-                     <th>    <%= select_tag :category, options_from_collection_for_select(@products, :category, :category), options = { prompt: 'Category' }
+                     <th>    <%= select_tag :category, options_from_collection_for_select(@nofilter, :category, :category), options = { prompt: 'Category' }
 
                      %>
                      </th>

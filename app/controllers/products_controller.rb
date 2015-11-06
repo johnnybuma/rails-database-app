@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def index
+    @nofilter = Product.all
     @products = Product.all
     @products = Product.where(nil) # creates an anonymous scope
     #@products = Product.all.order(:item)
@@ -30,8 +31,11 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
   def create
+    @nofilter = Product.all
     @products = Product.all
     @product = Product.create(product_params)
+    @products = Product.all.paginate(page: params[:page], per_page: 1)
+
 
   end
 
@@ -40,6 +44,7 @@ class ProductsController < ApplicationController
   end
   def update
     #@products = Product.all
+    @nofilter = Product.all
     @product = Product.find(params[:id])
     
     @product.update_attributes(product_params)
@@ -48,12 +53,16 @@ class ProductsController < ApplicationController
   end
 
   def delete
+    @nofilter = Product.all
     @product = Product.find(params[:product_id])
   end
   def destroy
+    @nofilter = Product.all
     @products = Product.all
     @product = Product.find(params[:id])
     @product.destroy
+    @products = Product.all.paginate(page: params[:page], per_page: 1)
+
   end
 
 private  
