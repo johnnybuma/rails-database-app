@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
     #@products = Product.all.order(:item)
     #@products = @products.all.order(:item)
 
-    @products = Product.filter(params.slice(:item, :color, :weight, :dimensions, :quantity, :description, :origin, :destination, :category, :status, :location)).paginate(page: params[:page], per_page: 1)
+    @products = Product.filter(params.slice(:item, :color, :weight, :dimensions, :quantity, :description, :origin, :destination, :category, :status, :location)).paginate(page: params[:page], per_page: 10)
 
     @products = Product.search(params[:search]).paginate(page: params[:page], per_page: 10) if params[:search].present?
 
