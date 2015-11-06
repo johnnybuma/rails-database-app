@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
   end
   def create
     @nofilter = Product.all
-    @products = Product.all
+    #@products = Product.all
     @product = Product.create(product_params)
     @products = Product.all.paginate(page: params[:page], per_page: 10)
 
@@ -40,6 +40,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
+
     @product = Product.find(params[:id])
   end
   def update

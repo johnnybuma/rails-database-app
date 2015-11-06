@@ -1,16 +1,20 @@
 $("ul.errors").html("")
 <% if @product.errors.any? %>
   <% @product.errors.full_messages.each do |message| %>
-    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"));
   <% end %>
 <% else %>
-  $(".product-index").html("<%= escape_javascript(render 'index') %>")
+  $(".product-index").html("<%= escape_javascript(render 'index') %>");
 
-  $("#product-modal").modal("hide")
+  $("#product-modal").modal("hide");
 
 
 <% end %>
-$("#showit").html("<%= escape_javascript(render 'product') %>")
+$("#showit").html("<%= escape_javascript(render 'product') %>");
 
+<% unless current_page? root_path %>
 
+$(window.location.replace("/products/<%= escape_javascript "#{@product.id}" %>"));
+
+<% end %>
 filter();
