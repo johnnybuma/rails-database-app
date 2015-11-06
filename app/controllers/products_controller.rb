@@ -34,7 +34,9 @@ class ProductsController < ApplicationController
     @nofilter = Product.all
     #@products = Product.all
     @product = Product.create(product_params)
-    @products = Product.all.paginate(page: params[:page], per_page: 10)
+    #This was switched maybe undo
+    #@products = Product.all.paginate(page: params[:page], per_page: 10)
+    redirect_to @product
 
 
   end
