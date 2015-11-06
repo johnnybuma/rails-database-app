@@ -90,7 +90,8 @@
             </tr>
             <% end %>
 
-          <%= will_paginate @products %>
+          <%= will_paginate(@products, :params => { :controller => "products", :action => "index" })
+          %>
 
     </table>
             <% end %>
