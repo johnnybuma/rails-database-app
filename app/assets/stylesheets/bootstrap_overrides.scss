@@ -217,3 +217,13 @@ td, th {
 select {
   max-width: 100%;
 }
+
+.pagination {
+  @extend .well-sm;
+  a { @extend .btn; @extend .btn-default; }
+  .previous_page { @extend .btn; @extend .btn-default; background:#122b40; color:white }
+  .previous_page.disabled { @extend .btn; @extend .btn-default; background: white; color: #777 }
+  .current { @extend .btn; @extend .btn-default; background: gray }
+  .next_page { @extend .btn; @extend .btn-default; background: #122b40; color: white }
+  .next_page.disabled { @extend .btn; @extend .btn-default; background: white; color: #777 }
+}

@@ -67,11 +67,11 @@
             <% @products.each do |product| %>
 
             <tr>
-                <td class="notable"><%= link_to product.item, product_path(product) %></td>
+                <td><%= link_to product.item, product_path(product) %></td>
                 <td class="notable"><%= product.color %></td>
                 <td class="notable"><%= product.weight %></td>
                 <td class="notable"><%= product.dimensions %></td>
-                <td><%= product.quantity %></td>
+                <td class="notable"><%= product.quantity %></td>
                 <td class="notable"><%= product.location %></td>
                 <td class="notable"><%= product.description %></td>
                 <td class="notable"><%= product.origin %></td>
@@ -90,12 +90,11 @@
             </tr>
             <% end %>
 
-          <%= js_will_paginate(@products, :params => { :controller => "products", :action => "index" })
-          %>
 
     </table>
-            <% end %>
+  <% end %>
 
+  <%= js_will_paginate(@products, :params => { :controller => "products", :action => "index" }) %>
 
 
 
