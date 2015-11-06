@@ -9,22 +9,16 @@ class ProductsController < ApplicationController
   end
 
   def index
+    @products = Product.all
     @products = Product.where(nil) # creates an anonymous scope
     #@products = Product.all.order(:item)
-    @products = @products.all.order(:item)
-    @products = @products.color(params[:color]).order(:item) if params[:color].present?
-    @products = @products.location(params[:location]).order(:item) if params[:location].present?
-    @products = @products.name(params[:item]).order(:item) if params[:item].present?
-    @products = @products.weight(params[:weight]).order(:item) if params[:weight].present?
-    @products = @products.dimensions(params[:dimensions]).order(:item) if params[:dimensions].present?
-    @products = @products.quantity(params[:quantity]).order(:item) if params[:quantity].present?
-    @products = @products.description(params[:description]).order(:item) if params[:description].present?
-    @products = @products.origin(params[:origin]).order(:item) if params[:origin].present?
-    @products = @products.status(params[:status]).order(:item) if params[:status].present?
-    @products = @products.destination(params[:destination]).order(:item) if params[:destination].present?
-    @products = @products.category(params[:category]).order(:item) if params[:category].present?
-    #old code
-    @products = @products.search(params[:search]).order(:item) if params[:search].present?
+    #@products = @products.all.order(:item)
+
+    @products = Product.filter(params.slice(:item, :color, :weight, :dimensions, :quantity, :description, :origin, :destination, :category, :status, :location)).paginate(page: params[:page], per_page: 1)
+
+    @products = Product.search(params[:search]).paginate(page: params[:page], per_page: 1) if params[:search].present?
+
+    #@products = Product.all.paginate(page: params[:page], per_page: 1)
 
 
 
@@ -44,10 +38,12 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
   def update
-    @products = Product.all
+    #@products = Product.all
     @product = Product.find(params[:id])
     
     @product.update_attributes(product_params)
+    @products = Product.all.paginate(page: params[:page], per_page: 1)
+
   end
 
   def delete
