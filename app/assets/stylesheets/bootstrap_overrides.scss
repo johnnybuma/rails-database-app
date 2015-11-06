@@ -217,7 +217,7 @@ td, th {
 select {
   max-width: 100%;
 }
-
+/* Pagination Styles */
 .pagination {
   @extend .well-sm;
   a { @extend .btn; @extend .btn-default; }
