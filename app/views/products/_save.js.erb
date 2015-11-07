@@ -9,10 +9,10 @@ $("ul.errors").html("")
 
   $("#product-modal").modal("hide");
 
+$(window.location.replace("/products/<%= @product.id %>"));
 
 <% end %>
 
-$(window.location.replace("/products/<%= @product.id %>"));
 
 
 

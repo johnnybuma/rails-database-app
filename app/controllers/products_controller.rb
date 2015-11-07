@@ -39,7 +39,8 @@ class ProductsController < ApplicationController
     end
     respond_to do |format|
    #   format.js { render :js => "window.location.href = '#{root_path}'" }
-       format.js { render :js => "window.location.href = '#{ product_path @product }'"}
+      format.js { render :content_type => 'text/javascript' }
+      #format.js { render :js => "window.location.href = '#{ product_path @product }'"}
     end
     #This was switched maybe undo
     @products = Product.all.paginate(page: params[:page], per_page: 10)
@@ -54,15 +55,22 @@ class ProductsController < ApplicationController
   def update
     #@products = Product.all
     @nofilter = Product.all
+    @products = Product.all.paginate(page: params[:page], per_page: 10)
+
     @product = Product.find(params[:id])
     
     @product.update_attributes(product_params)
 
     respond_to do |format|
-      format.js { render :js => "window.location.href = '#{ product_path @product }'"}
-    end
 
-    @products = Product.all.paginate(page: params[:page], per_page: 10)
+      format.html
+
+      #format.js { render :js => "window.location.href = '#{ product_path @product }'"}
+      format.js { render :content_type => 'text/javascript' }
+
+    end
+    flash[:notice] = "Successfully updated product '#{@product.item}'"
+
 
   end
 

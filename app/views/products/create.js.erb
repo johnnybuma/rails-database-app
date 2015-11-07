@@ -2,9 +2,9 @@
 
 $("ul.errors").html("")
 <% if @product.errors.any? %>
-<% @product.errors.full_messages.each do |message| %>
-$("ul.errors").append($("<li />").html("<%= message.html_safe %>"));
-<% end %>
+    <% @product.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"));
+    <% end %>
 <% else %>
 $("#showit").html("<%= escape_javascript(render 'product') %>");
 $("#product-modal").modal("hide");
@@ -17,5 +17,6 @@ alert('submitted via remotipart');
 alert('submitted via native jquery-ujs');
 <% end %>
 
+$(window.location.replace("/products/<%= @product.id %>"));
 
 filter();
