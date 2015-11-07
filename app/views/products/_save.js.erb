@@ -8,9 +8,14 @@ $("ul.errors").html("")
   $("#showit").html("<%= escape_javascript(render 'product') %>");
 
   $("#product-modal").modal("hide");
+    <% if remotipart_submitted? %>
 
+    $(window.location.replace("/products/<%= @product.id %>"));
+
+    <% end %>
 
 <% end %>
+
 
 
 filter();
