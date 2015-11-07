@@ -35,7 +35,7 @@ class ProductsController < ApplicationController
     #@products = Product.all
     @product = Product.create(product_params)
     if remotipart_submitted?
-      flash[:notice] = "Successfully created product."
+      flash[:notice] = "Successfully created product '#{@product.item}'"
     end
     respond_to do |format|
    #   format.js { render :js => "window.location.href = '#{root_path}'" }
@@ -57,6 +57,11 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     
     @product.update_attributes(product_params)
+
+    respond_to do |format|
+      format.js { render :js => "window.location.href = '#{ product_path @product }'"}
+    end
+
     @products = Product.all.paginate(page: params[:page], per_page: 10)
 
   end
