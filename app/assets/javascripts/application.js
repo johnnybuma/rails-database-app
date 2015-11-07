@@ -14,9 +14,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.remotipart
+//= require turbolinks
 //= require jquery.turbolinks
 //= require bootstrap
-//= require turbolinks
 //= require nprogress
 //= require nprogress-turbolinks
 //= require nprogress-ajax
