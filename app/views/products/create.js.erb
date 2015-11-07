@@ -1,6 +1,8 @@
 <%= render "save" %>
-<%= if remotipart_submitted? %>
-alert('submitted via remotipart');
-$(window.location.replace("/products/<%= @product.id %>"));
+alert('success!');
+<% if remotipart_submitted? %>
+alert('submitted via remotipart')
+<% else %>
+alert('submitted via native jquery-ujs')
 <% end %>
 filter();
