@@ -12,6 +12,7 @@
 //
 
 //= require jquery
+//= require jquery.turbolinks
 //= require bootstrap
 //= require jquery_ujs
 //= require turbolinks
@@ -21,9 +22,12 @@
 //= require nprogress-ajax
 //= require_tree .
 
-$(document).ready(function() {
-    NProgress.start();
-});
+//$(document).ready(function() {
+//    NProgress.start();
+//});
+$(document).on('page:fetch', function() { NProgress.start(); })
+$(document).on('page:change', function() { NProgress.done(); })
+$(document).on('page:restore', function() { NProgress.remove(); })
 
 filter = function () {
     var usedNames = {};

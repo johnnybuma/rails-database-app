@@ -5,16 +5,12 @@ $("ul.errors").html("")
   <% end %>
 <% else %>
   $(".product-index").html("<%= escape_javascript(render 'index') %>");
+  $("#showit").html("<%= escape_javascript(render 'product') %>");
 
   $("#product-modal").modal("hide");
 
 
 <% end %>
-$("#showit").html("<%= escape_javascript(render 'product') %>");
 
-<% unless current_page? root_path %>
 
-$(window.location.replace("/products/<%= escape_javascript "#{@product.id}" %>"));
-
-<% end %>
 filter();
