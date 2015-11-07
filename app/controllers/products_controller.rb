@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
   end
   
   def show
-    @product = Product.find(params[:id])
+      @product = Product.find(params[:id])
   end
   def create
     @nofilter = Product.all
@@ -36,7 +36,10 @@ class ProductsController < ApplicationController
     @product = Product.create(product_params)
     if remotipart_submitted?
       flash[:notice] = "Successfully created product."
-
+    end
+    respond_to do |format|
+   #   format.js { render :js => "window.location.href = '#{root_path}'" }
+       format.js { render :js => "window.location.href = '#{ product_path @product }'"}
     end
     #This was switched maybe undo
     @products = Product.all.paginate(page: params[:page], per_page: 10)

@@ -6,7 +6,6 @@ $("ul.errors").html("")
 $("ul.errors").append($("<li />").html("<%= message.html_safe %>"));
 <% end %>
 <% else %>
-$(".product-index").html("<%= escape_javascript(render 'index') %>");
 $("#showit").html("<%= escape_javascript(render 'product') %>");
 $("#product-modal").modal("hide");
 <% end %>
@@ -18,6 +17,5 @@ alert('submitted via remotipart');
 alert('submitted via native jquery-ujs');
 <% end %>
 
-$(window.location.replace("/products/<%= @product.id %>"));
 
 filter();
