@@ -10,7 +10,9 @@
   <div class="well">
     <div class="row">
       <div class="col-md-6">
+        <% if current_user.admin? %>
         <%= link_to "New Product", new_product_path, remote: true, class: "btn btn-primary form-margin", id: "new-product" %>
+        <% end %>
       </div>
       <div class="col-md-6">
         <%= render 'search' %>
