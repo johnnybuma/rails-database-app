@@ -1,6 +1,10 @@
 <div class="row form-margin product-index" id="index">
 
 <div class="col-lg-12 table-responsive">
+
+  <%= js_will_paginate(@products, :params => { :controller => "products", :action => "index" }) %>
+
+
   <!-- Form tag must wrap the table for search to work in chrome!!! Damnit Finally -->
   <%= form_tag(products_path, remote:true, :method => "get", class: "control-group") do %>
 
