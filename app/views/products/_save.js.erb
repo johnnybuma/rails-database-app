@@ -11,9 +11,11 @@ $("ul.errors").html("")
 
 
 <% end %>
-
+<% if @product.save %>
 
 $(window.location.replace("/products/<%= @product.id %>"));
+
+<% end %>
 
 
 
