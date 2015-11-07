@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
     @nofilter = Product.all
     #@products = Product.all
     @product = Product.create(product_params)
-    if @product.save
+    if remotipart_submitted?
       flash[:notice] = "Successfully created product."
 
     end
