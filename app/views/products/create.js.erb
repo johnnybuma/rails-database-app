@@ -1,5 +1,5 @@
 <%= render "save" %>
-<% if remotipart_submitted? %>
+<%= if remotipart_submitted? %>
 alert('submitted via remotipart');
 $(window.location.replace("/products/<%= @product.id %>"));
 <% end %>
