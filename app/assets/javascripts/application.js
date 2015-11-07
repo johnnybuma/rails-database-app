@@ -12,10 +12,10 @@
 //
 
 //= require jquery
-//= require jquery.turbolinks
-//= require bootstrap
 //= require jquery_ujs
 //= require jquery.remotipart
+//= require jquery.turbolinks
+//= require bootstrap
 //= require turbolinks
 //= require nprogress
 //= require nprogress-turbolinks
@@ -124,3 +124,4 @@ filter = function () {
     });
 
 };
+
