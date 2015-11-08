@@ -10,12 +10,7 @@ $("#showit").html("<%= escape_javascript(render 'product') %>");
 $("#product-modal").modal("hide");
 <% end %>
 
-alert('success!');
-<% if remotipart_submitted? %>
-alert('submitted via remotipart');
-<% else %>
-alert('submitted via native jquery-ujs');
-<% end %>
+alert('successfully added <%= @product.item %>');
 
 $(window.location.replace("/products/<%= @product.id %>"));
 

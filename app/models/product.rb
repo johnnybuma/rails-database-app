@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
   include Filterable
-  validates :color, :origin, :destination, :weight, :dimensions, presence: true
+  validates :item, :color, :origin, :destination, :weight, :dimensions, presence: true
   validates_uniqueness_of :item, :message => "*  [%{value}] has already been recorded, please review database"
   has_attached_file :image, styles: { small: "64x64", med: "100x100", large: "200x200" }
 
@@ -29,13 +29,5 @@ class Product < ActiveRecord::Base
     #where("Item LIKE ? OR Color LIKE ? OR Weight LIKE ? OR Dimensions LIKE ? OR Quantity LIKE ? OR Location LIKE ? OR Description LIKE ? OR Origin LIKE ? OR Status LIKE ? OR Destination LIKE ? OR Category LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
 
   end
-  #def self.search(search)
-  #  search = search.strip
-  #  where("Name LIKE ?", "%#{search}%")
-  #end
-
-
-
-
 
 end

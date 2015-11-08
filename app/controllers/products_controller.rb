@@ -13,18 +13,8 @@ class ProductsController < ApplicationController
     @nofilter = Product.all
     @products = Product.all
     @products = Product.where(nil) # creates an anonymous scope
-    #@products = Product.all.order(:item)
-    #@products = @products.all.order(:item)
-
     @products = Product.filter(params.slice(:item, :color, :weight, :dimensions, :quantity, :description, :origin, :destination, :category, :status, :location)).paginate(page: params[:page], per_page: 10)
-
     @products = Product.search(params[:search]).paginate(page: params[:page], per_page: 10) if params[:search].present?
-
-    #@products = Product.all.paginate(page: params[:page], per_page: 1)
-
-
-
-
   end
   
   def show
@@ -32,17 +22,13 @@ class ProductsController < ApplicationController
   end
   def create
     @nofilter = Product.all
-    #@products = Product.all
     @product = Product.create(product_params)
     if remotipart_submitted?
-      flash[:notice] = "Successfully created product '#{@product.item}'"
+      flash[:notice] = "Successfully created '#{@product.item}'"
     end
     respond_to do |format|
-   #   format.js { render :js => "window.location.href = '#{root_path}'" }
       format.js { render :content_type => 'text/javascript' }
-      #format.js { render :js => "window.location.href = '#{ product_path @product }'"}
     end
-    #This was switched maybe undo
     @products = Product.all.paginate(page: params[:page], per_page: 10)
 
 
@@ -53,7 +39,6 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
   def update
-    #@products = Product.all
     @nofilter = Product.all
     @products = Product.all.paginate(page: params[:page], per_page: 10)
 
@@ -62,14 +47,10 @@ class ProductsController < ApplicationController
     @product.update_attributes(product_params)
 
     respond_to do |format|
-
       format.html
-
-      #format.js { render :js => "window.location.href = '#{ product_path @product }'"}
       format.js { render :content_type => 'text/javascript' }
-
     end
-    flash[:notice] = "Successfully updated product '#{@product.item}'"
+    flash[:notice] = "Successfully updated '#{@product.item}'"
 
 
   end
