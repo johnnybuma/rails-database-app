@@ -65,7 +65,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
 
     if @product.destroy
-      flash[:alert] = "Successfully Deleted Product."
+      flash[:alert] = "Successfully Deleted '#{@product.item}'"
 
     end
     @products = Product.all.paginate(page: params[:page], per_page: 10)
