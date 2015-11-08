@@ -227,3 +227,7 @@ select {
   .next_page { @extend .btn; @extend .btn-default; background: #122b40; color: white }
   .next_page.disabled { @extend .btn; @extend .btn-default; background: white; color: #777 }
 }
+
+.errors li {
+  color:red;
+}

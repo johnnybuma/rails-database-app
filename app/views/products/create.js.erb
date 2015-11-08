@@ -1,5 +1,3 @@
-
-
 $("ul.errors").html("")
 <% if @product.errors.any? %>
     <% @product.errors.full_messages.each do |message| %>
@@ -8,10 +6,12 @@ $("ul.errors").html("")
 <% else %>
 $("#showit").html("<%= escape_javascript(render 'product') %>");
 $("#product-modal").modal("hide");
+alert('successfully added <%= @product.item %>');
+$(window.location.replace("/products/<%= @product.id %>"));
+
+
 <% end %>
 
-alert('successfully added <%= @product.item %>');
 
-$(window.location.replace("/products/<%= @product.id %>"));
 
 filter();

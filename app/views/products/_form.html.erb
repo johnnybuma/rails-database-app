@@ -1,6 +1,5 @@
 <%= form_for(@product, remote: true, html: { class: "form-horizontal directUpload", id: "sumbitit", style: "display: inline;", multipart: true}) do |f| %>
   <div class="modal-body">
-        <ul class="errors"></ul>
         <%= render 'shared/error_messages', object: f.object %>
 
         <%= f.label :item, class: "control-label" %>
@@ -38,8 +37,10 @@
 
         <%= f.label :image, class: "control-label" %>
         <%= f.file_field :image, class: 'form-control' %>
-    
-        <%= f.submit "Submit Product to Database", class: "btn btn-large btn-primary form-margin", id: "form-submit" %>
+        <ul class="errors"></ul>
+
+
+        <%= f.submit "Submit to Database", class: "btn btn-large btn-primary form-margin", id: "form-submit" %>
         <div style="height: 45px;"></div>
   </div>
 <% end %>
