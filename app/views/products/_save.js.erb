@@ -1,4 +1,4 @@
-$("ul.errors").html("")
+$("ul.errors").html("");
 <% if @product.errors.any? %>
   <% @product.errors.full_messages.each do |message| %>
     $("ul.errors").append($("<li />").html("<%= message.html_safe %>"));
@@ -9,7 +9,7 @@ $("ul.errors").html("")
 
   $("#product-modal").modal("hide");
 
-$(window.location.replace("/products/<%= @product.id %>"));
+  $(window.location.replace("/products/<%= @product.id %>"));
 
 <% end %>
 

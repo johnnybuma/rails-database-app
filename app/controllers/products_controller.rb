@@ -47,7 +47,6 @@ class ProductsController < ApplicationController
     @product.update_attributes(product_params)
 
     respond_to do |format|
-      format.html
       format.js { render :content_type => 'text/javascript' }
     end
     flash[:notice] = "Successfully updated '#{@product.item}'"
