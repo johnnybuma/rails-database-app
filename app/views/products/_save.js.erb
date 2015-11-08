@@ -4,18 +4,8 @@ $("ul.errors").html("");
     $("ul.errors").append($("<li />").html("<%= message.html_safe %>"));
   <% end %>
 <% else %>
-  $(".product-index").html("<%= escape_javascript(render 'index') %>");
-  $("#showit").html("<%= escape_javascript(render 'product') %>");
-
-  $("#product-modal").modal("hide");
-
-  $(window.location.replace("/products/<%= @product.id %>"));
-
+$("#showit").html("<%= escape_javascript(render 'product') %>");
+$("#product-modal").modal("hide");
+$(window.location.replace("/products/<%= @product.id %>"));
 <% end %>
-
-
-
-
-
-
 filter();

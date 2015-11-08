@@ -45,11 +45,11 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     
     @product.update_attributes(product_params)
+    flash[:notice] = "Successfully updated '#{@product.item}'"
 
     respond_to do |format|
       format.js { render :content_type => 'text/javascript' }
     end
-    flash[:notice] = "Successfully updated '#{@product.item}'"
 
 
   end
