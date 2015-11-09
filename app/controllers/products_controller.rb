@@ -13,8 +13,8 @@ class ProductsController < ApplicationController
     @nofilter = Product.all
     @products = Product.all
     @products = Product.where(nil) # creates an anonymous scope
-    @products = Product.filter(params.slice(:item, :color, :weight, :dimensions, :quantity, :description, :origin, :destination, :category, :status, :location)).paginate(page: params[:page], per_page: 10)
-    @products = Product.search(params[:search]).paginate(page: params[:page], per_page: 10) if params[:search].present?
+    @products = Product.filter(params.slice(:item, :color, :weight, :dimensions, :quantity, :description, :origin, :destination, :category, :status, :location)).paginate(page: params[:page], per_page: 10).order(:item)
+    @products = Product.search(params[:search]).paginate(page: params[:page], per_page: 10).order(:item) if params[:search].present?
   end
   
   def show
