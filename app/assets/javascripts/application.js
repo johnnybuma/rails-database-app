@@ -38,6 +38,13 @@ $(document).ready(function() {
         console.log("gotcha!!!");
 
     });
+    $(document).change(function() {
+        $('#but-filter').click(function() {
+            console.log("Fuck YOU!!!");
+            $('#searchme').val('');
+        });
+
+    });
 });
 
 filter = function () {
