@@ -31,6 +31,14 @@ $(document).on('page:restore', function() { NProgress.remove(); })
 
 
 
+//This is awesome!!!
+$(document).ready(function() {
+    $('#searchme').keyup(function() {
+        $("#search-form").submit();
+        console.log("gotcha!!!");
+
+    });
+});
 
 filter = function () {
     var usedNames = {};

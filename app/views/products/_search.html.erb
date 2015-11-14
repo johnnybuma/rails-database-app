@@ -1,40 +1,7 @@
 <%= form_tag(products_path, remote:true, :method => "get", id: "search-form", class: "control-group") do %>
-    <!--<div class="col-md-3">
-    <%= text_field_tag :color, params[:color], placeholder: "Color", class: "form-control form-margin" %>
-    </div>
-    <div class="col-md-3">
-    <%= text_field_tag :weight, params[:weight], placeholder: "Weight", class: "form-control form-margin" %>
-    </div>
-    <div class="col-md-3">
-    <%= text_field_tag :dimensions, params[:dimensions], placeholder: "Dimensions", class: "form-control form-margin" %>
-    </div>
-    <div class="col-md-3">
-    <%= text_field_tag :quantity, params[:quantity], placeholder: "Quantity", class: "form-control form-margin" %>
-    </div>
-    <div class="col-md-3">
-    <%= text_field_tag :location, params[:location], placeholder: "Search Location", class: "form-control form-margin" %>
-    </div>
-    <div class="col-md-3">
-    <%= text_field_tag :description, params[:description], placeholder: "Description", class: "form-control form-margin" %>
-    </div>
-    <div class="col-md-3">
-    <%= text_field_tag :origin, params[:origin], placeholder: "Origin", class: "form-control form-margin" %>
-    </div>
-    <div class="col-md-3">
-    <%= text_field_tag :status, params[:status], placeholder: "Status", class: "form-control form-margin" %>
-    </div>
-    <div class="col-md-3">
-    <%= text_field_tag :destination, params[:destination], placeholder: "Destination", class: "form-control form-margin" %>
-    </div>
-    <div class="col-md-3">
-    <%= text_field_tag :category, params[:category], placeholder: "Category", class: "form-control form-margin" %>
-    </div>
 
-    <div class="col-md-3">
-    <%= submit_tag "Search", id: "but-search", class: " btn btn-primary form-margin" %>
-    </div>-->
 
-    <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control form-margin" %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control form-margin", id: "searchme" %>
     <%= submit_tag "Search", id: "but-search", class: " btn btn-primary form-margin" %>
 
 
