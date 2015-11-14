@@ -209,7 +209,7 @@ td, th {
 }
 /* New Styles TODO: Ask Tara? */
 td, th {
-  width: 150px;
+  /*width: 150px;*/
   max-width: 300px;
   word-wrap: break-word;
 }
@@ -234,4 +234,10 @@ select {
 
 #item-button {
   @extend .btn; @extend .btn-default; color: black;
+  max-width: 150px;
+  width: inherit;
+}
+
+#but-filter {
+  width: inherit;
 }
