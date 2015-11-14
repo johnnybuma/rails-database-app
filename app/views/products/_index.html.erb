@@ -71,7 +71,7 @@
             <% @products.each do |product| %>
 
             <tr>
-                <td><%= link_to product.item, product_path(product), remote: true %></td>
+                <td><%= link_to product.item, product_path(product), remote: true, class: "btn btn-default", id: "item-button" %></td>
                 <td class="notable"><%= product.color %></td>
                 <td class="notable"><%= product.weight %></td>
                 <td class="notable"><%= product.dimensions %></td>
