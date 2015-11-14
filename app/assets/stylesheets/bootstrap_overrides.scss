@@ -232,6 +232,6 @@ select {
   color:red;
 }
 
-.btn-default {
-  color: black !important;
+#item-button {
+  @extend .btn; @extend .btn-default; color: black;
 }
