@@ -24,9 +24,9 @@ class Product < ActiveRecord::Base
   def self.search(search)
     search = search.strip
     # This syntax is for postgresql for heroku   
-    #where("Item ILIKE ? OR Color ILIKE ? OR Weight ILIKE ? OR Dimensions ILIKE ? OR Quantity ILIKE ? OR Location ILIKE ? OR Description ILIKE ? OR Origin ILIKE ? OR Status ILIKE ? OR Destination ILIKE ? OR Category ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    where("Item ILIKE ? OR Color ILIKE ? OR Weight ILIKE ? OR Dimensions ILIKE ? OR Quantity ILIKE ? OR Location ILIKE ? OR Description ILIKE ? OR Origin ILIKE ? OR Status ILIKE ? OR Destination ILIKE ? OR Category ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
     #This syntax is for sqlite3 ORIGINAL
-    where("Item LIKE ? OR Color LIKE ? OR Weight LIKE ? OR Dimensions LIKE ? OR Quantity LIKE ? OR Location LIKE ? OR Description LIKE ? OR Origin LIKE ? OR Status LIKE ? OR Destination LIKE ? OR Category LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    #where("Item LIKE ? OR Color LIKE ? OR Weight LIKE ? OR Dimensions LIKE ? OR Quantity LIKE ? OR Location LIKE ? OR Description LIKE ? OR Origin LIKE ? OR Status LIKE ? OR Destination LIKE ? OR Category LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
 
   end
 
