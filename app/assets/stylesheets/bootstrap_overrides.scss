@@ -234,8 +234,8 @@ select {
 
 #item-button {
   @extend .btn; @extend .btn-default; color: black;
-  max-width: 150px;
   width: inherit;
+  max-width: 150px;
 }
 
 #but-filter {
