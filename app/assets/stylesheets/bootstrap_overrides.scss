@@ -235,6 +235,7 @@ select {
 #item-button {
   @extend .btn; @extend .btn-default; color: black;
   width: 100px;
+  overflow: hidden;
 }
 
 #but-filter {
